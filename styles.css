@@ -775,3 +775,184 @@ ul {
   object-fit:contain;
   filter:invert(1);
 }
+/* =========================================================
+   PROYECTO — NÓMADA VIAJES
+========================================================= */
+
+.nomada-project {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.035);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nomada-project:hover {
+  transform: translateY(-6px);
+  border-color: rgba(64, 190, 184, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.nomada-project .project-preview {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0d4f5c;
+}
+
+.nomada-project .project-preview img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.55s ease;
+}
+
+.nomada-project:hover .project-preview img {
+  transform: scale(1.035);
+}
+
+.nomada-project .project-preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 31, 36, 0.78),
+      rgba(5, 31, 36, 0.05) 60%
+    );
+  transition: opacity 0.3s ease;
+}
+
+.nomada-project:hover .project-preview-overlay {
+  opacity: 1;
+}
+
+.nomada-project .project-preview-overlay span {
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #123b41;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.nomada-project .project-content {
+  padding: 24px;
+}
+
+.nomada-project .project-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.nomada-project .project-type {
+  color: #49b9b2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nomada-project .project-status {
+  padding: 6px 10px;
+  border: 1px solid rgba(73, 185, 178, 0.2);
+  border-radius: 999px;
+  background: rgba(73, 185, 178, 0.07);
+  color: #78ccc7;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.nomada-project h3 {
+  margin: 0 0 12px;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.1;
+}
+
+.nomada-project .project-content > p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+  opacity: 0.72;
+}
+
+.nomada-project .project-features,
+.nomada-project .project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nomada-project .project-features {
+  margin-bottom: 18px;
+}
+
+.nomada-project .project-features span {
+  padding: 7px 11px;
+  border-radius: 10px;
+  background: rgba(73, 185, 178, 0.09);
+  color: #70c8c2;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.nomada-project .project-stack {
+  margin-bottom: 24px;
+}
+
+.nomada-project .project-stack span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.58;
+}
+
+.nomada-project .project-stack span:not(:last-child)::after {
+  content: "·";
+  margin-left: 8px;
+  opacity: 0.5;
+}
+
+.nomada-project .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nomada-project .project-link span {
+  transition: transform 0.25s ease;
+}
+
+.nomada-project .project-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 640px) {
+  .nomada-project {
+    border-radius: 18px;
+  }
+
+  .nomada-project .project-content {
+    padding: 19px;
+  }
+
+  .nomada-project .project-preview-overlay {
+    display: none;
+  }
+}
