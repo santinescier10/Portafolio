@@ -956,3 +956,572 @@ ul {
     display: none;
   }
 }
+/* =========================================================
+   PORTFOLIO - PROYECTOS ACTUALIZADOS
+   NÓMADA + PULSO TRAINING CLUB
+========================================================= */
+
+.projects-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 45px;
+}
+
+
+/* =========================================================
+   CARD GENERAL
+========================================================= */
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  min-width: 0;
+}
+
+
+.project-item:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(102, 126, 234, 0.35);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   IMAGEN
+========================================================= */
+
+.project-image-wrap {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #111827;
+}
+
+
+.project-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: top center;
+
+  transition:
+    transform 0.55s ease,
+    filter 0.4s ease;
+}
+
+
+.project-item:hover .project-image {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.project-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.05) 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+
+.project-image-wrap:hover .project-overlay {
+  opacity: 1;
+}
+
+
+.project-overlay span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #111827;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.project-overlay.muted {
+  opacity: 1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.45),
+      transparent 65%
+    );
+}
+
+
+.project-overlay.muted span {
+  background: rgba(17, 24, 39, 0.88);
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 25px;
+}
+
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+
+.project-category {
+  margin: 0;
+
+  color: #818cf8;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+
+.project-status.online {
+  background: rgba(34, 197, 94, 0.12);
+
+  border: 1px solid rgba(34, 197, 94, 0.22);
+
+  color: #4ade80;
+}
+
+
+.project-status.progress {
+  background: rgba(245, 158, 11, 0.12);
+
+  border: 1px solid rgba(245, 158, 11, 0.22);
+
+  color: #fbbf24;
+}
+
+
+.project-status.concept {
+  background: rgba(148, 163, 184, 0.12);
+
+  border: 1px solid rgba(148, 163, 184, 0.2);
+
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.project-content h3 {
+  margin: 0 0 13px;
+
+  color: #fff;
+
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.project-description {
+  margin: 0 0 20px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TECNOLOGÍAS
+========================================================= */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+
+.project-tech span {
+  display: inline-flex;
+
+  padding: 7px 10px;
+
+  border-radius: 9px;
+
+  background: rgba(129, 140, 248, 0.08);
+
+  border: 1px solid rgba(129, 140, 248, 0.1);
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.project-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 43px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.project-btn.primary {
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #8b5cf6
+    );
+
+  color: #fff;
+
+  box-shadow:
+    0 10px 25px rgba(99, 102, 241, 0.2);
+}
+
+
+.project-btn.primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 32px rgba(99, 102, 241, 0.3);
+}
+
+
+.project-btn.disabled {
+  background: rgba(255, 255, 255, 0.06);
+
+  color: rgba(255, 255, 255, 0.42);
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PULSO TRAINING CLUB
+   Proyecto número 5
+========================================================= */
+
+.projects-showcase .project-item:nth-child(5) {
+  grid-column: 1 / -1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(340px, 0.75fr);
+
+  min-height: 430px;
+
+  border-color: rgba(190, 255, 0, 0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(190, 255, 0, 0.045),
+      rgba(255, 255, 255, 0.025)
+    );
+}
+
+
+.projects-showcase
+.project-item:nth-child(5)
+.project-image-wrap {
+  height: 100%;
+
+  min-height: 430px;
+
+  aspect-ratio: auto;
+}
+
+
+.projects-showcase
+.project-item:nth-child(5)
+.project-image {
+  object-fit: cover;
+
+  object-position: top center;
+}
+
+
+.projects-showcase
+.project-item:nth-child(5)
+.project-category {
+  color: #b8ff22;
+}
+
+
+.projects-showcase
+.project-item:nth-child(5)
+.project-tech span {
+  background: rgba(184, 255, 34, 0.07);
+
+  border-color: rgba(184, 255, 34, 0.13);
+}
+
+
+.projects-showcase
+.project-item:nth-child(5)
+.project-btn.primary {
+  background:
+    linear-gradient(
+      135deg,
+      #b8ff22,
+      #8ed700
+    );
+
+  color: #10130d;
+
+  box-shadow:
+    0 12px 28px rgba(184, 255, 34, 0.12);
+}
+
+
+.projects-showcase
+.project-item:nth-child(5)
+.project-btn.primary:hover {
+  box-shadow:
+    0 15px 34px rgba(184, 255, 34, 0.22);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .projects-showcase {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+
+  .projects-showcase
+  .project-item:nth-child(5) {
+    grid-column: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+  }
+
+
+  .projects-showcase
+  .project-item:nth-child(5)
+  .project-image-wrap {
+    height: auto;
+
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .projects-showcase {
+    margin-top: 32px;
+
+    gap: 18px;
+  }
+
+
+  .project-item {
+    border-radius: 18px;
+  }
+
+
+  .project-content {
+    padding: 19px;
+  }
+
+
+  .project-content h3 {
+    font-size: 1.4rem;
+  }
+
+
+  .project-description {
+    font-size: 0.87rem;
+  }
+
+
+  .project-tech {
+    margin-bottom: 20px;
+  }
+
+
+  .project-overlay {
+    opacity: 1;
+
+    padding: 13px;
+
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5),
+        transparent 55%
+      );
+  }
+
+
+  .project-overlay span {
+    padding: 7px 11px;
+
+    font-size: 0.7rem;
+  }
+
+
+  .project-btn {
+    width: 100%;
+  }
+
+}
